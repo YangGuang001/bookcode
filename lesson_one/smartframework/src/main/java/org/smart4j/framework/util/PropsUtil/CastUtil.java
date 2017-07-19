@@ -31,11 +31,11 @@ public class CastUtil {
         return doubleVaule;
     }
 
-    public static double castLong(Object obj){
+    public static long castLong(Object obj){
         return castLong(obj, 0);
     }
 
-    public static double castLong(Object obj, long defaultVaule){
+    public static long castLong(Object obj, long defaultVaule){
         long longVaule = defaultVaule;
         if (obj != null){
             String strValue = castString(obj);
