@@ -17,6 +17,7 @@ public final class IocHelper {
         if (CollectionUtil.isNotEmpty(beanMap)){
             for (Map.Entry<Class<?>, Object> beanEntry : beanMap.entrySet()){
                 Class<?> beanClass = beanEntry.getKey();
+                Object beanInstance = beanEntry.getValue();
                 Field[] beanFields = beanClass.getDeclaredFields();
                 if (ArrayUtil.isNotEmpty(beanFields)){
                     for (Field beanField : beanFields){
@@ -24,7 +25,7 @@ public final class IocHelper {
                             Class<?> beanFieldClass = beanField.getType();
                             Object beanFieldInstance = beanMap.get(beanFieldClass);
                             if (beanFieldInstance != null){
-                                ReflectionUtil.setField(beanFieldInstance, beanField, beanFieldInstance);
+                                ReflectionUtil.setField(beanInstance, beanField, beanFieldInstance);
                             }
                         }
                     }

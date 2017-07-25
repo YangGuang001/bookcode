@@ -50,7 +50,7 @@ public final class ReflectionUtil {
         try {
             field.setAccessible(true);
             field.set(obj, value);
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             LOGGER.error("set field failure", e);
             throw new RuntimeException(e);
         }

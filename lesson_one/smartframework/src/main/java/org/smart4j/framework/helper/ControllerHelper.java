@@ -28,7 +28,7 @@ public final class ControllerHelper {
                         if (method.isAnnotationPresent(Action.class)){
                             Action action = method.getAnnotation(Action.class);
                             String maping = action.value();
-                            if (maping.matches("\\w:/\\w*")){
+                            if (maping.matches("\\w*:/\\w*")){
                                 String[] array = maping.split(":");
                                 if (ArrayUtil.isNotEmpty(array) && array.length == 2){
                                     String requestMetod = array[0];
